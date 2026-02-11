@@ -16,13 +16,13 @@ This project focuses on predicting the nightly price of Airbnb listings in Bosto
 
 ## 3. Timeline
 * **March** (First Project Check-in):
-  1. Complete data cleaning.
-  2. Conduct exploratory data analysis (EDA) to figure out key features and pricing patterns.
-  3. Discussing initial modeling ideas and challenges.
+  1. Complete data cleaning.(2 weeks)
+  2. Conduct exploratory data analysis (EDA) to figure out key features and pricing patterns.(1 week)
+  3. Discussing initial modeling ideas and challenges.(half week)
 * **April** (Second Project Check-in):
-  1. Build and refine predictive models.
-  2. Evaluate model performance.
-  3. Analyze feature importance and adjust the model based on first check-in.
+  1. Build and refine predictive models.(2 weeks)
+  2. Evaluate model performance.(1 week)
+  3. Analyze feature importance and adjust the model based on first check-in.(half week)
 * Submit final report and presentation.
 
 
