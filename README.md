@@ -4,6 +4,14 @@
 
 ### Liting Zheng, Zhihui Qian, Siyuan Wang, Lina Yingying Zhang
 
+## Using a Virtual Environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install scikit-learn pandas numpy matplotlib seaborn
+```
+
 ## 1. Project Description
 This project focuses on predicting the nightly price of Airbnb listings in Boston using Airbnb open data(23 September 2025). The model will use listing features such as location, room type, number of bedrooms, amenities, availability, and seasonal factors to estimate a reasonable price per night. By examining how these features influence pricing, the project applies data analysis techniques to capture pricing patterns in the Boston Airbnb market and provide interpretable insights into the factors that drive price differences across listings.
 
