@@ -125,7 +125,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 71.0,South Boston,Private room,Private room in home,2,1.0,1.0,5,29,62,204,1.59,4.61,1,0.0,0.0,1.0
 570.0,Roxbury,Entire home/apt,Entire rental unit,4,2.0,2.0,29,365,309,100,0.81,4.98,0,1.0,1.0,1.5
 247.0,Jamaica Plain,Entire home/apt,Entire rental unit,4,2.0,3.0,2,31,272,502,3.88,4.93,0,1.0,1.0,1.0
-950.0,South End,Entire home/apt,Entire townhouse,6,3.0,4.0,5,1125,29,44,0.34,5.0,0,1.0,1.0,2.5
 39.0,Roxbury,Private room,Private room in rental unit,1,1.0,1.0,91,1125,365,6,0.05,5.0,0,0.0,1.0,1.0
 62.0,East Boston,Entire home/apt,Entire condo,2,1.0,1.0,65,365,67,87,0.68,4.49,0,1.0,1.0,1.0
 126.0,Dorchester,Entire home/apt,Entire guest suite,5,3.0,4.0,29,1125,219,268,2.24,4.81,0,1.0,1.0,1.0
@@ -317,7 +316,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 40.0,Dorchester,Private room,Private room in rental unit,1,1.0,1.0,30,365,361,22,0.2,4.5,0,0.0,1.0,1.0
 119.0,Jamaica Plain,Private room,Private room in home,1,1.0,1.0,3,14,23,339,3.08,4.91,0,1.0,1.0,1.5
 60.0,Mattapan,Private room,Private room in home,1,1.0,1.0,90,700,273,11,0.1,4.64,0,1.0,1.0,1.5
-946.0,South Boston,Entire home/apt,Entire home,6,4.0,4.0,29,30,358,17,0.16,4.88,0,0.0,1.0,2.0
 48.0,Dorchester,Private room,Private room in rental unit,1,1.0,2.0,30,365,304,14,0.13,4.71,0,0.0,1.0,1.0
 358.0,South End,Entire home/apt,Entire condo,4,2.0,2.0,2,120,218,440,3.99,4.93,0,1.0,1.0,2.0
 65.0,Hyde Park,Private room,Private room in home,1,1.0,1.0,29,1125,338,50,0.45,4.58,1,0.0,1.0,2.0
@@ -842,7 +840,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 60.0,Roxbury,Private room,Private room in home,1,1.0,1.0,1,1125,307,325,4.79,4.68,1,0.0,1.0,1.0
 143.0,Jamaica Plain,Private room,Private room in home,2,1.0,1.0,2,1125,333,75,1.15,4.91,0,0.0,1.0,1.0
 158.0,Jamaica Plain,Private room,Private room in condo,2,1.0,1.0,2,1125,327,54,0.82,4.93,0,0.0,1.0,1.0
-936.0,Back Bay,Entire home/apt,Entire townhouse,7,3.0,5.0,3,1125,248,78,2.62,5.0,0,1.0,1.0,3.5
 300.0,Dorchester,Entire home/apt,Entire rental unit,6,3.0,3.0,29,250,255,4,0.11,4.25,1,1.0,1.0,1.0
 257.0,Dorchester,Entire home/apt,Entire guest suite,6,3.0,4.0,1,11,75,199,3.8,4.81,0,0.0,1.0,1.0
 58.0,Roxbury,Private room,Private room in rental unit,1,1.0,1.0,29,1125,327,24,0.38,4.96,0,1.0,1.0,1.0
@@ -905,7 +902,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 300.0,Charlestown,Entire home/apt,Boat,2,1.0,1.0,1,1125,345,14,0.24,4.86,1,1.0,0.0,1.0
 275.0,Fenway,Entire home/apt,Entire rental unit,5,2.0,2.0,32,270,262,0,,,1,1.0,1.0,2.0
 230.0,Fenway,Entire home/apt,Entire rental unit,3,1.0,1.0,32,270,325,0,,,1,1.0,1.0,1.0
-919.0,Downtown,Entire home/apt,Entire serviced apartment,8,4.0,4.0,1,365,27,278,4.61,4.74,1,0.0,1.0,2.0
 582.0,Downtown,Entire home/apt,Entire serviced apartment,4,2.0,2.0,1,365,8,335,5.53,4.71,1,0.0,1.0,1.0
 645.0,Downtown,Entire home/apt,Entire serviced apartment,8,4.0,4.0,1,90,13,265,4.38,4.72,1,0.0,1.0,2.0
 623.0,Downtown,Entire home/apt,Entire serviced apartment,6,3.0,3.0,1,180,17,292,4.85,4.72,1,0.0,1.0,2.0
@@ -1239,7 +1235,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 321.0,Downtown,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,138,0,,,1,0.0,1.0,1.0
 355.0,Roslindale,Entire home/apt,Entire condo,6,3.0,6.0,3,1125,194,76,1.64,4.71,1,1.0,1.0,2.0
 79.0,East Boston,Private room,Private room in home,2,1.0,1.0,1,28,17,234,5.08,4.49,0,0.0,1.0,1.5
-1000.0,Beacon Hill,Entire home/apt,Entire townhouse,6,4.0,4.0,4,725,218,62,1.46,5.0,0,1.0,1.0,5.0
 344.0,Downtown,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,132,1,0.03,5.0,1,0.0,1.0,1.0
 192.0,East Boston,Entire home/apt,Entire home,2,1.0,2.0,2,1125,43,124,3.15,4.86,0,1.0,0.0,1.0
 358.0,Downtown,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,132,1,0.03,5.0,1,0.0,1.0,1.0
@@ -1301,7 +1296,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 440.0,Downtown,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,175,0,,,1,0.0,1.0,1.0
 281.0,Back Bay,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,278,0,,,1,0.0,1.0,1.0
 108.0,Hyde Park,Entire home/apt,Entire townhouse,2,1.0,1.0,15,1125,361,28,0.7,4.93,0,1.0,1.0,0.5
-975.0,Dorchester,Entire home/apt,Entire place,16,8.0,13.0,2,28,65,45,1.04,4.89,0,1.0,1.0,4.0
 257.0,Beacon Hill,Entire home/apt,Entire serviced apartment,2,1.0,1.0,1,1000,62,75,1.8,4.8,1,0.0,1.0,1.0
 235.0,Beacon Hill,Entire home/apt,Entire rental unit,2,1.0,1.0,1,1000,69,65,1.55,4.82,1,0.0,1.0,1.0
 276.0,Beacon Hill,Entire home/apt,Entire serviced apartment,4,1.0,2.0,1,1000,67,93,2.55,4.83,1,0.0,1.0,1.0
@@ -1587,7 +1581,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 338.0,Downtown,Entire home/apt,Entire rental unit,2,1.0,1.0,1,365,219,197,5.3,4.85,0,0.0,1.0,1.0
 140.0,Beacon Hill,Entire home/apt,Entire rental unit,4,2.0,2.0,29,365,229,3,0.09,5.0,0,,1.0,2.0
 70.0,East Boston,Private room,Private room in condo,1,1.0,1.0,29,365,318,0,,,0,0.0,1.0,1.0
-1000.0,South Boston,Entire home/apt,Entire home,6,3.0,5.0,29,1125,365,10,0.27,5.0,0,0.0,1.0,1.0
 162.0,Mission Hill,Entire home/apt,Entire rental unit,2,0.0,1.0,2,60,181,96,2.79,4.72,0,0.0,1.0,1.0
 132.0,Mission Hill,Entire home/apt,Entire rental unit,2,0.0,1.0,2,60,193,79,2.26,4.63,0,0.0,1.0,1.0
 392.0,East Boston,Entire home/apt,Entire rental unit,8,3.0,5.0,3,365,153,96,3.13,4.92,0,1.0,1.0,1.0
@@ -1678,7 +1671,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 253.0,Allston,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,304,1,0.04,5.0,1,0.0,1.0,1.0
 254.0,Allston,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,267,0,,,1,0.0,1.0,1.0
 248.0,Roslindale,Entire home/apt,Entire rental unit,4,1.0,2.0,2,730,338,112,3.3,4.93,1,1.0,1.0,1.0
-1000.0,Beacon Hill,Entire home/apt,Entire townhouse,8,4.0,4.0,29,90,285,6,0.23,5.0,0,0.0,1.0,4.5
 122.0,Beacon Hill,Entire home/apt,Entire rental unit,2,1.0,1.0,29,365,219,6,0.24,4.83,0,,1.0,1.0
 221.0,North End,Entire home/apt,Entire rental unit,2,0.0,1.0,1,365,332,141,4.12,4.89,0,1.0,1.0,1.0
 123.0,Beacon Hill,Entire home/apt,Entire rental unit,3,1.0,1.0,29,365,219,4,0.21,5.0,0,,1.0,1.0
@@ -1863,13 +1855,11 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 100.0,Jamaica Plain,Private room,Private room in home,2,1.0,1.0,29,1125,281,4,0.15,5.0,0,0.0,1.0,1.0
 121.0,Beacon Hill,Entire home/apt,Entire rental unit,3,1.0,1.0,29,365,183,4,0.3,5.0,0,,1.0,1.0
 143.0,Dorchester,Entire home/apt,Entire guest suite,4,1.0,0.0,2,1125,176,89,3.22,4.78,0,0.0,0.0,1.0
-961.0,Jamaica Plain,Entire home/apt,Entire rental unit,5,2.0,5.0,29,365,364,6,0.22,4.83,0,0.0,1.0,2.0
 355.0,Bay Village,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,100,1,0.06,5.0,1,0.0,1.0,1.0
 66.0,Dorchester,Private room,Private room in rental unit,1,1.0,1.0,32,365,191,6,0.23,4.83,0,1.0,1.0,1.0
 279.0,Mattapan,Entire home/apt,Entire rental unit,8,3.0,3.0,29,365,364,4,0.14,4.75,0,0.0,1.0,1.0
 140.0,West Roxbury,Entire home/apt,Entire rental unit,1,1.0,1.0,5,365,241,28,1.06,4.96,0,1.0,1.0,1.0
 499.0,Brighton,Entire home/apt,Entire rental unit,6,2.0,5.0,29,365,364,8,0.3,4.75,0,0.0,1.0,2.0
-979.0,Bay Village,Entire home/apt,Entire condo,8,3.0,5.0,1,365,264,108,3.96,4.95,0,1.0,1.0,3.0
 143.0,Hyde Park,Entire home/apt,Entire home,6,3.0,3.0,30,365,327,0,,,0,0.0,1.0,1.0
 307.0,Fenway,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,130,1,0.08,5.0,1,0.0,1.0,1.0
 461.0,Fenway,Entire home/apt,Entire rental unit,4,2.0,2.0,32,1125,359,0,,,1,0.0,1.0,1.0
@@ -2138,7 +2128,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 114.0,North End,Entire home/apt,Entire rental unit,2,1.0,1.0,31,365,114,0,,,0,0.0,1.0,1.0
 84.0,North End,Entire home/apt,Entire rental unit,2,1.0,1.0,91,365,124,0,,,0,0.0,1.0,1.0
 346.0,Jamaica Plain,Entire home/apt,Entire condo,7,3.0,4.0,30,1125,295,42,1.91,4.88,1,1.0,1.0,2.0
-998.0,Downtown,Entire home/apt,Entire rental unit,5,2.0,2.0,4,365,360,0,,,0,0.0,1.0,1.0
 118.0,Dorchester,Private room,Private room in rental unit,3,1.0,1.0,29,60,343,47,2.04,4.89,0,0.0,1.0,1.0
 118.0,Dorchester,Private room,Private room in rental unit,3,1.0,1.0,29,30,344,29,1.25,4.86,0,0.0,1.0,1.0
 839.0,Jamaica Plain,Entire home/apt,Entire rental unit,4,2.0,3.0,1,365,358,2,0.45,5.0,0,0.0,1.0,2.0
@@ -2251,7 +2240,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 85.0,Dorchester,Private room,Private room in rental unit,2,1.0,0.0,1,365,313,101,6.23,4.87,1,1.0,1.0,1.0
 399.0,Back Bay,Entire home/apt,Entire condo,2,1.0,1.0,29,365,331,4,0.22,5.0,0,1.0,0.0,1.0
 294.0,South Boston,Entire home/apt,Entire rental unit,2,1.0,1.0,32,1125,176,0,,,1,0.0,1.0,1.0
-961.0,South End,Entire home/apt,Entire rental unit,5,2.0,3.0,29,365,365,10,0.46,4.6,0,0.0,1.0,2.0
 690.0,Dorchester,Entire home/apt,Entire home,12,5.0,6.0,2,365,344,75,3.67,4.97,0,1.0,1.0,3.5
 92.0,Dorchester,Private room,Private room in rental unit,2,1.0,1.0,1,365,290,54,3.96,4.78,1,1.0,1.0,1.0
 85.0,Dorchester,Private room,Private room in rental unit,2,1.0,1.0,1,365,294,75,4.63,4.75,1,1.0,1.0,1.0
@@ -2398,7 +2386,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 69.0,South Boston,Private room,Private room in rental unit,1,1.0,1.0,91,365,191,0,,,1,0.0,1.0,0.0
 375.0,Fenway,Entire home/apt,Entire rental unit,2,1.0,1.0,1,1125,268,6,0.47,4.17,1,0.0,1.0,1.0
 159.0,Downtown,Private room,Private room in rental unit,2,1.0,1.0,1,365,280,116,6.3,4.19,1,0.0,1.0,1.0
-968.0,Fenway,Entire home/apt,Entire rental unit,4,2.0,2.0,1,1125,238,13,0.8,4.54,1,0.0,1.0,2.0
 263.0,Back Bay,Private room,Room in hotel,2,1.0,1.0,1,365,11,137,7.65,4.72,1,1.0,1.0,1.0
 93.0,Dorchester,Entire home/apt,Entire rental unit,2,0.0,1.0,29,365,349,2,0.12,4.5,0,0.0,1.0,1.0
 287.0,Brighton,Entire home/apt,Entire rental unit,4,2.0,2.0,32,1125,277,0,,,1,0.0,1.0,2.0
@@ -2779,7 +2766,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 424.0,Downtown,Entire home/apt,Entire rental unit,4,2.0,2.0,31,1125,131,1,0.31,5.0,1,0.0,1.0,2.0
 545.0,South Boston Waterfront,Private room,Room in hotel,2,1.0,1.0,1,365,155,12,1.63,4.58,1,1.0,1.0,1.0
 592.0,South Boston Waterfront,Private room,Room in hotel,4,1.0,2.0,1,365,154,7,2.56,4.71,1,1.0,1.0,1.0
-929.0,South Boston Waterfront,Private room,Room in hotel,2,1.0,1.0,1,365,166,0,,,1,1.0,1.0,1.0
 326.0,Back Bay,Entire home/apt,Entire rental unit,2,1.0,1.0,31,1125,207,1,0.3,5.0,1,0.0,1.0,1.0
 275.0,Back Bay,Entire home/apt,Entire rental unit,2,0.0,1.0,31,1125,207,0,,,1,0.0,1.0,1.0
 278.0,Back Bay,Entire home/apt,Entire rental unit,2,0.0,1.0,31,1125,277,0,,,1,0.0,1.0,1.0
@@ -2969,7 +2955,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 449.0,Back Bay,Entire home/apt,Entire rental unit,5,2.0,3.0,29,365,341,2,0.38,4.5,0,0.0,1.0,2.0
 199.0,West Roxbury,Entire home/apt,Entire rental unit,6,3.0,5.0,1,365,336,23,4.04,4.83,1,0.0,1.0,1.0
 258.0,West Roxbury,Entire home/apt,Entire home,5,3.0,3.0,2,14,180,15,2.63,4.93,0,1.0,0.0,1.5
-941.0,North End,Entire home/apt,Entire home,12,4.0,5.0,29,365,365,7,1.07,5.0,0,1.0,1.0,2.0
 150.0,Dorchester,Entire home/apt,Entire rental unit,4,2.0,2.0,29,365,202,4,0.63,4.75,0,0.0,1.0,1.5
 418.0,Jamaica Plain,Entire home/apt,Entire rental unit,12,4.0,6.0,30,1125,305,21,1.69,4.95,1,0.0,1.0,2.0
 769.0,South End,Entire home/apt,Entire rental unit,4,1.0,2.0,29,29,338,0,,,1,0.0,1.0,1.0
@@ -3083,7 +3068,6 @@ price,neighbourhood_cleansed,room_type,property_type,accommodates,bedrooms,beds,
 179.0,Back Bay,Entire home/apt,Entire rental unit,2,0.0,1.0,28,730,276,7,1.68,4.86,0,,1.0,1.0
 338.0,Dorchester,Entire home/apt,Entire rental unit,12,4.0,6.0,2,365,327,6,2.47,5.0,0,,1.0,3.0
 96.0,South Boston,Private room,Private room in rental unit,2,0.0,1.0,1,365,51,2,0.49,3.0,1,0.0,1.0,1.0
-987.0,Jamaica Plain,Entire home/apt,Entire condo,16,10.0,14.0,30,1125,311,0,,,1,1.0,1.0,5.0
 96.0,Dorchester,Entire home/apt,Entire guest suite,4,2.0,2.0,91,365,173,0,,,0,1.0,1.0,1.0
 373.0,South Boston,Entire home/apt,Entire home,6,2.0,4.0,2,365,98,16,4.9,4.69,1,0.0,0.0,2.0
 315.0,Jamaica Plain,Entire home/apt,Entire rental unit,6,3.0,1.0,2,365,336,5,1.6,5.0,1,0.0,1.0,1.0
