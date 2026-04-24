@@ -301,3 +301,28 @@ The raw `amenities` column stores a JSON-like list string (e.g., `'["Wifi", "Kit
 
 
 ## 5. Geographic Clustering
+
+
+## 7. Modeling
+
+| Section | Model | Notes |
+|---------|-------|-------|
+| 4.5 | **Linear Regression** | OLS, interpretable linear baseline |
+| 4.6 | **Lasso** | L1 regularization; alpha tuned via `LassoCV` (5-fold) |
+| 4.7 | **Ridge** | L2 regularization; alpha tuned via `RidgeCV` (5-fold) |
+| 4.8 | **Decision Tree** | Non-linear tree-based model; hyperparameters tuned via `GridSearchCV` (5-fold)|
+| 4.9 | **Random Forest** | Ensemble of decision trees; hyperparameters tuned via `GridSearchCV` (5-fold) |
+| 4.10 | **XGBoost** | Gradient boosting model; hyperparameters tuned via `GridSearchCV` (5-fold) |
+
+### Results
+
+| Model | CV R² (mean ± std) | CV RMSE | Test R² | Test RMSE | Test MAE ($) |
+|---|---|---|---|---|---|
+| Linear Regression | 0.7524 ± 0.0202 | 0.3423 ± 0.0160 | 0.7192 | 0.3609 | $60.14 |
+| Lasso | 0.7522 ± 0.0207 | 0.3424 ± 0.0168 | 0.7219 | 0.3592 | $60.22 |
+| Ridge | 0.7526 ± 0.0205 | 0.3421 ± 0.0165 | 0.7209 | 0.3599 | $60.03 |
+| Decision Tree | 0.7474 ± 0.0141 | 0.3457 ± 0.0141 | 0.6896 | 0.3795 | $63.05 |
+| Random Forest | 0.8346 ± 0.0131 | 0.2797 ± 0.0124 | 0.8053 | 0.3006 | $49.09 |
+| XGBoost | 0.8354 ± 0.0148 | 0.2790 ± 0.0141 | 0.8018 | 0.3032 | $48.58 |
+
+**Best Model: XGBoost**
