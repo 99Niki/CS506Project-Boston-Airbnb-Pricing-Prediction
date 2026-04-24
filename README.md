@@ -334,3 +334,52 @@ The boxplot shows clear price variation across the six clusters. Kenmore/Fenway 
 | Engineered  | `is_short_stay`, `is_shared_bath`                                                         |
 | Amenities   | `has_wifi`, `has_parking`, `has_kitchen`, `has_ac`, `has_self_checkin`, `has_pet_allowed` |
 | Categorical | `room_type`, `property_type_clean`, `neighbourhood_cleansed`, `geo_area`                  |
+
+ 
+## 7. Preprocessing
+
+After the cleaning step, the final dataset contains 3,412 rows and 21 columns (including 17 numerical and  4 categorical features). Before training the models, we applied the following preprocessing steps:
+
+- Train/test split: the data was divided into training and test sets using a 70/30 split with `random_state=42` for reproducibility.
+- Feature transformation: numerical variables were standardized, while categorical variables were one-hot encoded. These transformations were fitted on the training data only to avoid data leakage.
+- Evaluation helper function: we implemented a reusable helper function to evaluate each model consistently. For every model, the function:
+  1. fits the model on `X_train` and `y_train`
+  2. performs k-fold cross-validation on the training set only
+  3. evaluates the fitted model on the held-out test set
+
+  The function returns CV R², CV RMSE, Test R², Test RMSE, and Test MAE ($). Since this is a regression problem, our main objective is to minimize RMSE. However, because the target variable is log-transformed, we also report MAE in dollars to make the results easier to interpret.
+
+
+## 8. Modeling
+### 8.1 Model Selection
+We selected six models to cover a spectrum of complexity and interpretability. Linear Regression, Lasso, and Ridge represent the linear family. They are fast and interpretable, which make them natural starting points for a regression task. Lasso and Ridge add L1/L2 regularization respectively, which in theory helps when features are noisy or collinear. In addition, we selected three tree-based models (Decision Tree, Random Forest and XGBoost) to account for potential nonlinear relationships and interactions among features that may not be fully captured by linear methods.
+
+| Section | Model | Notes |
+|---------|-------|-------|
+| 4.5 | **Linear Regression** | OLS, interpretable linear baseline |
+| 4.6 | **Lasso** | L1 regularization; alpha tuned via `LassoCV` (5-fold) |
+| 4.7 | **Ridge** | L2 regularization; alpha tuned via `RidgeCV` (5-fold) |
+| 4.8 | **Decision Tree** | Non-linear tree-based model; hyperparameters tuned via `GridSearchCV` (5-fold)|
+| 4.9 | **Random Forest** | Ensemble of decision trees; hyperparameters tuned via `GridSearchCV` (5-fold) |
+| 4.10 | **XGBoost** | Gradient boosting model; hyperparameters tuned via `GridSearchCV` (5-fold) |
+
+### 8.2 Results
+
+| Model | CV R² (mean ± std) | CV RMSE | Test R² | Test RMSE | Test MAE ($) |
+|---|---|---|---|---|---|
+| Linear Regression | 0.7524 ± 0.0202 | 0.3423 ± 0.0160 | 0.7192 | 0.3609 | $60.14 |
+| Lasso | 0.7522 ± 0.0207 | 0.3424 ± 0.0168 | 0.7219 | 0.3592 | $60.22 |
+| Ridge | 0.7526 ± 0.0205 | 0.3421 ± 0.0165 | 0.7209 | 0.3599 | $60.03 |
+| Decision Tree | 0.7474 ± 0.0141 | 0.3457 ± 0.0141 | 0.6896 | 0.3795 | $63.05 |
+| Random Forest | 0.8346 ± 0.0131 | 0.2797 ± 0.0124 | 0.8053 | 0.3006 | $49.09 |
+| XGBoost | 0.8354 ± 0.0148 | 0.2790 ± 0.0141 | 0.8018 | 0.3032 | $48.58 |
+
+![Plot title](./plots/model_comparison.png)
+
+**Best Model: Random Forest**
+
+### 8.3 Discussion & Limitations
+The three linear models, Linear Regression, Lasso, and Ridge, perform very similarly, achieving nearly identical training and testing RMSE. However, they share fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
+
+The last three tree-based models show more variation in performance. The simplest of the three, the Decision Tree, was the worst-performing model overall. Although its training RMSE is quite close to that of the linear models, a single decision tree is prone to overfitting, which may explain its weaker performance on test data. The two ensemble tree methods, instead, performed substantially better, suggesting that nonlinear relationships and feature interactions are important in predicting Airbnb prices. XGBoost obtained the lowest CV RMSE, but looking at the test RMSE, which is the final metric we care about most, Random Forest performed slighly better and can be considered the best model, achieving a test RMSE of 0.3006.
+
