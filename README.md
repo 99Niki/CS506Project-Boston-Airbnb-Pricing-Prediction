@@ -15,11 +15,14 @@
 
 ```bash
 git clone https://github.com/99Niki/CS506Project-Boston-Airbnb-Pricing-Prediction.git
-cd CS506Project-Boston-Airbnb-Pricing-Prediction
 make install       # create venv and install all dependencies
 make data          # download listings.csv from Inside Airbnb
 make run           # execute the notebook end-to-end
 make test          # run the test suite
+```
+If you see an XGBoost OpenMP error on macOS, install libomp:
+```bash
+brew install libomp
 ```
 
 ### Tests and CI
