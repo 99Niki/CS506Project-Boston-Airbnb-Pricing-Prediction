@@ -347,9 +347,9 @@ We selected six models to cover a spectrum of complexity and interpretability. L
 
 **Best Model: Random Forest**
 
-### 8.3 Discussion 
+### 8.3 Discussion
 
-The three linear models, Linear Regression, Lasso, and Ridge, share a fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
+**Limitations:** The three linear models, Linear Regression, Lasso, and Ridge, share a fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
 
 
 
