@@ -1,7 +1,7 @@
 VENV     := .venv
 PYTHON   := $(VENV)/bin/python
 PIP      := $(VENV)/bin/pip
-NB       := CS506_Airbnb_Merged.ipynb
+NB := CS506_Airbnb_Notebook.ipynb
 DATA_URL := http://data.insideairbnb.com/united-states/ma/boston/2024-09-23/data/listings.csv.gz
 
 .PHONY: install data run test clean
