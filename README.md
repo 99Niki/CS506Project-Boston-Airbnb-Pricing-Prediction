@@ -1,5 +1,30 @@
 # CS506Project-Boston-Airbnb-Pricing-Prediction
 
+## Setup and run
+1. Create a virtual environment:
+   ```bash
+   python3 -m venv .venv
+   ```
+2. Activate it:
+   - macOS/Linux:
+     ```bash
+     source .venv/bin/activate
+     ```
+   - Windows PowerShell:
+     ```powershell
+     .\.venv\Scripts\Activate.ps1
+     ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   If you see an XGBoost OpenMP error on macOS, install libomp:
+   ```bash
+   brew install libomp
+   ```
+
+
+
 # Project Title: Boston Airbnb Pricing Prediction Model
 
 ### Liting Zheng, Zhihui Qian, Siyuan Wang, Lina Yingying Zhang
