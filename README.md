@@ -312,6 +312,16 @@ Clsuters were manually labeled based on geography:
 
 `geo_area` is used as a categorical feature alongside `neighbourhood_cleansed` to capture more fine grained location signals.
 
+![Geographic Price and Cluster Map](./plots/KMeans_geographic.png)
+
+The left heatmap shows that listing prices are geographically concentrated. High-price listings cluster along the downtown part. On the other hand, prices drop noticeably toward outer areas. This spatial pattern suggests that priximity to the city center is a meaningful driver of price.
+
+The k = 6 KMeans clusters on the right aligns closely with actual neighborhood boundaries. This shows that the geogeaphic sturcture extracted from latitude and longitude is meaningful additional location feature alongside `neighbourhood_cleaned`.
+
+![Log Price by Geographic Cluster](./plots/price_by_geographic_clustering.png)
+
+The boxplot shows clear price variation across the six clusters. Kenmore/Fenway has the highest median log price, followed by Chinatown/Downtown. Allston/Brighton and Roslindale have relatively lower median prices. All clusters show considerable IQR spread, which means even within the same geographic area, other listing features are still important sources of price variation.
+
 ## 6. Final Feature Set
 
 | Group       | Features                                                                                  |
