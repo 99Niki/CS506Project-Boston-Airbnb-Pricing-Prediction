@@ -297,8 +297,43 @@ The raw `amenities` column stores a JSON-like list string (e.g., `'["Wifi", "Kit
 
 ## 5. Geographic Clustering
 
-<<<<<<< HEAD
+KMeans was applied to (latitude, longitude) for k ∈ {2,...,7}; k = 6 was selected based on the maximum silhouette score.
 
+Clsuters were manually labeled based on geography:
+
+| Feature | Pattern matched    |
+| ------- | ------------------ |
+| 0       | Mid Dorchester     |
+| 1       | Kenmore/Fenway     |
+| 2       | Allston/Brighton   |
+| 3       | Roslindale         |
+| 4       | East Boston        |
+| 5       | Chinatown/Downtown |
+
+`geo_area` is used as a categorical feature alongside `neighbourhood_cleansed` to capture more fine grained location signals.
+
+![Geographic Price and Cluster Map](./plots/KMeans_geographic.png)
+
+The left heatmap shows that listing prices are geographically concentrated. High-price listings cluster along the downtown part. On the other hand, prices drop noticeably toward outer areas. This spatial pattern suggests that priximity to the city center is a meaningful driver of price.
+
+The k = 6 KMeans clusters on the right aligns closely with actual neighborhood boundaries. This shows that the geogeaphic sturcture extracted from latitude and longitude is meaningful additional location feature alongside `neighbourhood_cleaned`.
+
+![Log Price by Geographic Cluster](./plots/price_by_geographic_clustering.png)
+
+The boxplot shows clear price variation across the six clusters. Kenmore/Fenway has the highest median log price, followed by Chinatown/Downtown. Allston/Brighton and Roslindale have relatively lower median prices. All clusters show considerable IQR spread, which means even within the same geographic area, other listing features are still important sources of price variation.
+
+## 6. Final Feature Set
+
+| Group       | Features                                                                                  |
+| ----------- | ----------------------------------------------------------------------------------------- |
+| Host        | `host_is_superhost`                                                                       |
+| Location    | `latitude`, `longitude`                                                                   |
+| Capacity    | `accommodates`, `bathrooms`, `bedrooms`, `beds`                                           |
+| Availbility | `availability_365`                                                                        |
+| Reviews     | `number_of_reviews`                                                                       |
+| Engineered  | `is_short_stay`, `is_shared_bath`                                                         |
+| Amenities   | `has_wifi`, `has_parking`, `has_kitchen`, `has_ac`, `has_self_checkin`, `has_pet_allowed` |
+| Categorical | `room_type`, `property_type_clean`, `neighbourhood_cleansed`, `geo_area`                  |
 
  
 ## 7. Preprocessing
@@ -343,59 +378,8 @@ We selected six models to cover a spectrum of complexity and interpretability. L
 
 **Best Model: Random Forest**
 
-<<<<<<< HEAD
-### 8.3 Discussion
-
-**Limitations:** The three linear models, Linear Regression, Lasso, and Ridge, share a fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
-
-
-
-
-
-
-As for our fourth model, we chose a Decision Tree, since unlike linear models it is able to capture nonlinear effects and interactions among features. However, even after tuning its hyperparameters, the Decision Tree turned out to be the worst-performing model overall, with a test RMSE of 0.3795. This is likely because a single decision tree is highly prone to overfitting. In fact, its CV RMSE is relatively close to the results of the linear models, suggesting that its average validation performance is not dramatically worse. However, because a single tree can be very sensitive to the specific patterns and noise in the training data, it tends to fit the training set too closely and generalize poorly to unseen observations. As a result, despite its ability to model nonlinear relationships, the Decision Tree ultimately performed worse than both the linear models and the ensemble tree-based methods.
-=======
 ### 8.3 Discussion & Limitations
 The three linear models, Linear Regression, Lasso, and Ridge, perform very similarly, achieving nearly identical training and testing RMSE. However, they share fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
 
 The last three tree-based models show more variation in performance. The simplest of the three, the Decision Tree, was the worst-performing model overall. Although its training RMSE is quite close to that of the linear models, a single decision tree is prone to overfitting, which may explain its weaker performance on test data. The two ensemble tree methods, instead, performed substantially better, suggesting that nonlinear relationships and feature interactions are important in predicting Airbnb prices. XGBoost obtained the lowest CV RMSE, but looking at the test RMSE, which is the final metric we care about most, Random Forest performed slighly better and can be considered the best model, achieving a test RMSE of 0.3006.
->>>>>>> 62b574d (updated discussion&limiations)
-=======
-KMeans was applied to (latitude, longitude) for k ∈ {2,...,7}; k = 6 was selected based on the maximum silhouette score.
 
-Clsuters were manually labeled based on geography:
-
-| Feature | Pattern matched    |
-| ------- | ------------------ |
-| 0       | Mid Dorchester     |
-| 1       | Kenmore/Fenway     |
-| 2       | Allston/Brighton   |
-| 3       | Roslindale         |
-| 4       | East Boston        |
-| 5       | Chinatown/Downtown |
-
-`geo_area` is used as a categorical feature alongside `neighbourhood_cleansed` to capture more fine grained location signals.
-
-![Geographic Price and Cluster Map](./plots/KMeans_geographic.png)
-
-The left heatmap shows that listing prices are geographically concentrated. High-price listings cluster along the downtown part. On the other hand, prices drop noticeably toward outer areas. This spatial pattern suggests that priximity to the city center is a meaningful driver of price.
-
-The k = 6 KMeans clusters on the right aligns closely with actual neighborhood boundaries. This shows that the geogeaphic sturcture extracted from latitude and longitude is meaningful additional location feature alongside `neighbourhood_cleaned`.
-
-![Log Price by Geographic Cluster](./plots/price_by_geographic_clustering.png)
-
-The boxplot shows clear price variation across the six clusters. Kenmore/Fenway has the highest median log price, followed by Chinatown/Downtown. Allston/Brighton and Roslindale have relatively lower median prices. All clusters show considerable IQR spread, which means even within the same geographic area, other listing features are still important sources of price variation.
-
-## 6. Final Feature Set
-
-| Group       | Features                                                                                  |
-| ----------- | ----------------------------------------------------------------------------------------- |
-| Host        | `host_is_superhost`                                                                       |
-| Location    | `latitude`, `longitude`                                                                   |
-| Capacity    | `accommodates`, `bathrooms`, `bedrooms`, `beds`                                           |
-| Availbility | `availability_365`                                                                        |
-| Reviews     | `number_of_reviews`                                                                       |
-| Engineered  | `is_short_stay`, `is_shared_bath`                                                         |
-| Amenities   | `has_wifi`, `has_parking`, `has_kitchen`, `has_ac`, `has_self_checkin`, `has_pet_allowed` |
-| Categorical | `room_type`, `property_type_clean`, `neighbourhood_cleansed`, `geo_area`                  |
->>>>>>> origin/main
