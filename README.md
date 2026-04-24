@@ -347,6 +347,7 @@ We selected six models to cover a spectrum of complexity and interpretability. L
 
 **Best Model: Random Forest**
 
+<<<<<<< HEAD
 ### 8.3 Discussion
 
 **Limitations:** The three linear models, Linear Regression, Lasso, and Ridge, share a fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
@@ -357,3 +358,9 @@ We selected six models to cover a spectrum of complexity and interpretability. L
 
 
 As for our fourth model, we chose a Decision Tree, since unlike linear models it is able to capture nonlinear effects and interactions among features. However, even after tuning its hyperparameters, the Decision Tree turned out to be the worst-performing model overall, with a test RMSE of 0.3795. This is likely because a single decision tree is highly prone to overfitting. In fact, its CV RMSE is relatively close to the results of the linear models, suggesting that its average validation performance is not dramatically worse. However, because a single tree can be very sensitive to the specific patterns and noise in the training data, it tends to fit the training set too closely and generalize poorly to unseen observations. As a result, despite its ability to model nonlinear relationships, the Decision Tree ultimately performed worse than both the linear models and the ensemble tree-based methods.
+=======
+### 8.3 Discussion & Limitations
+The three linear models, Linear Regression, Lasso, and Ridge, perform very similarly, achieving nearly identical training and testing RMSE. However, they share fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
+
+The last three tree-based models show more variation in performance. The simplest of the three, the Decision Tree, was the worst-performing model overall. Although its training RMSE is quite close to that of the linear models, a single decision tree is prone to overfitting, which may explain its weaker performance on test data. The two ensemble tree methods, instead, performed substantially better, suggesting that nonlinear relationships and feature interactions are important in predicting Airbnb prices. XGBoost obtained the lowest CV RMSE, but looking at the test RMSE, which is the final metric we care about most, Random Forest performed slighly better and can be considered the best model, achieving a test RMSE of 0.3006.
+>>>>>>> 62b574d (updated discussion&limiations)
