@@ -304,6 +304,7 @@ The raw `amenities` column stores a JSON-like list string (e.g., `'["Wifi", "Kit
 
 
 ## 7. Modeling
+We selected six models to cover a spectrum of complexity and interpretability. 
 
 | Section | Model | Notes |
 |---------|-------|-------|
@@ -314,7 +315,7 @@ The raw `amenities` column stores a JSON-like list string (e.g., `'["Wifi", "Kit
 | 4.9 | **Random Forest** | Ensemble of decision trees; hyperparameters tuned via `GridSearchCV` (5-fold) |
 | 4.10 | **XGBoost** | Gradient boosting model; hyperparameters tuned via `GridSearchCV` (5-fold) |
 
-### Results
+ ### Results
 
 | Model | CV R² (mean ± std) | CV RMSE | Test R² | Test RMSE | Test MAE ($) |
 |---|---|---|---|---|---|
@@ -326,3 +327,16 @@ The raw `amenities` column stores a JSON-like list string (e.g., `'["Wifi", "Kit
 | XGBoost | 0.8354 ± 0.0148 | 0.2790 ± 0.0141 | 0.8018 | 0.3032 | $48.58 |
 
 **Best Model: XGBoost**
+
+
+### 7.1 Model Selection
+
+
+### 7.2 Limitations
+
+
+
+
+
+
+As for our fourth model, we chose a Decision Tree, since unlike linear models it is able to capture nonlinear effects and interactions among features. However, even after tuning its hyperparameters, the Decision Tree turned out to be the worst-performing model overall, with a test RMSE of 0.3795. This is likely because a single decision tree is highly prone to overfitting. In fact, its CV RMSE is relatively close to the results of the linear models, suggesting that its average validation performance is not dramatically worse. However, because a single tree can be very sensitive to the specific patterns and noise in the training data, it tends to fit the training set too closely and generalize poorly to unseen observations. As a result, despite its ability to model nonlinear relationships, the Decision Tree ultimately performed worse than both the linear models and the ensemble tree-based methods.
