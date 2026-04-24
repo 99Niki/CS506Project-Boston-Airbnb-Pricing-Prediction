@@ -24,7 +24,6 @@
    ```
 
 
-
 # Project Title: Boston Airbnb Pricing Prediction Model
 
 ### Liting Zheng, Zhihui Qian, Siyuan Wang, Lina Yingying Zhang
