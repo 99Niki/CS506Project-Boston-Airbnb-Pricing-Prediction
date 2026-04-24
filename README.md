@@ -320,7 +320,7 @@ After the cleaning step, the final dataset contains 3,412 rows and 21 columns (i
 
 
 ## 8. Modeling
-We selected six models to cover a spectrum of complexity and interpretability. 
+We select six models to cover a spectrum of complexity and interpretability. Linear Regression, Lasso, and Ridge represent the linear family. They are fast and interpretable, which make them natural starting points for a regression task. Lasso and Ridge add L1/L2 regularization respectively, which in theory helps when features are noisy or collinear.
 
 | Section | Model | Notes |
 |---------|-------|-------|
