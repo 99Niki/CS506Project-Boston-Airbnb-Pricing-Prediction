@@ -12,9 +12,8 @@ install:
 	$(PIP) install -r requirements.txt
 
 data:
-	mkdir -p data/raw
-	curl -L $(DATA_URL) -o data/raw/listings.csv.gz
-	gunzip -f data/raw/listings.csv.gz
+	@echo "Using listings.csv from the repository root."
+	@test -f listings.csv || (echo "ERROR: listings.csv not found in repo root!" && exit 1)
 
 run:
 	$(VENV)/bin/jupyter nbconvert --to notebook --execute $(NB) \
