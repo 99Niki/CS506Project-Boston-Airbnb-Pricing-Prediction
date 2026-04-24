@@ -303,7 +303,23 @@ The raw `amenities` column stores a JSON-like list string (e.g., `'["Wifi", "Kit
 ## 5. Geographic Clustering
 
 
-## 7. Modeling
+
+ 
+## 7. Preprocessing
+
+After the cleaning step, the final dataset contains 3,412 rows and 21 columns (including 17 numerical and  4 categorical features). Before training the models, we applied the following preprocessing steps:
+
+- Train/test split: the data was divided into training and test sets using a 70/30 split with `random_state=42` for reproducibility.
+- Feature transformation: numerical variables were standardized, while categorical variables were one-hot encoded. These transformations were fitted on the training data only to avoid data leakage.
+- Evaluation helper function: we implemented a reusable helper function to evaluate each model consistently. For every model, the function:
+  1. fits the model on `X_train` and `y_train`
+  2. performs k-fold cross-validation on the training set only
+  3. evaluates the fitted model on the held-out test set
+
+  The function returns CV R², CV RMSE, Test R², Test RMSE, and Test MAE ($). Since this is a regression problem, our main objective is to minimize RMSE. However, because the target variable is log-transformed, we also report MAE in dollars to make the results easier to interpret.
+
+
+## 8. Modeling
 We selected six models to cover a spectrum of complexity and interpretability. 
 
 | Section | Model | Notes |
