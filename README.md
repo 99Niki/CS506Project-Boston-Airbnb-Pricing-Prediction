@@ -320,7 +320,8 @@ After the cleaning step, the final dataset contains 3,412 rows and 21 columns (i
 
 
 ## 8. Modeling
-We select six models to cover a spectrum of complexity and interpretability. Linear Regression, Lasso, and Ridge represent the linear family. They are fast and interpretable, which make them natural starting points for a regression task. Lasso and Ridge add L1/L2 regularization respectively, which in theory helps when features are noisy or collinear.
+### 8.1 Model Selection
+We selected six models to cover a spectrum of complexity and interpretability. Linear Regression, Lasso, and Ridge represent the linear family. They are fast and interpretable, which make them natural starting points for a regression task. Lasso and Ridge add L1/L2 regularization respectively, which in theory helps when features are noisy or collinear. In addition, we selected three tree-based models (Decision Tree, Random Forest and XGBoost) to account for potential nonlinear relationships and interactions among features that may not be fully captured by linear methods.
 
 | Section | Model | Notes |
 |---------|-------|-------|
@@ -331,7 +332,7 @@ We select six models to cover a spectrum of complexity and interpretability. Lin
 | 4.9 | **Random Forest** | Ensemble of decision trees; hyperparameters tuned via `GridSearchCV` (5-fold) |
 | 4.10 | **XGBoost** | Gradient boosting model; hyperparameters tuned via `GridSearchCV` (5-fold) |
 
- ### Results
+### 8.2 Results
 
 | Model | CV R² (mean ± std) | CV RMSE | Test R² | Test RMSE | Test MAE ($) |
 |---|---|---|---|---|---|
@@ -342,13 +343,13 @@ We select six models to cover a spectrum of complexity and interpretability. Lin
 | Random Forest | 0.8346 ± 0.0131 | 0.2797 ± 0.0124 | 0.8053 | 0.3006 | $49.09 |
 | XGBoost | 0.8354 ± 0.0148 | 0.2790 ± 0.0141 | 0.8018 | 0.3032 | $48.58 |
 
-**Best Model: XGBoost**
+![Plot title](./plots/model_comparison.png)
 
+**Best Model: Random Forest**
 
-### 7.1 Model Selection
+### 8.3 Discussion 
 
-
-### 7.2 Limitations
+The three linear models, Linear Regression, Lasso, and Ridge, share a fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
 
 
 
