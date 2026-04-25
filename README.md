@@ -15,11 +15,18 @@
 
 ```bash
 git clone https://github.com/99Niki/CS506Project-Boston-Airbnb-Pricing-Prediction.git
-make install       # create venv and install all dependencies
+make setup         # create .venv, install dependencies
 make data          # download listings.csv from Inside Airbnb
 make run           # execute the notebook end-to-end
 make test          # run the test suite
 ```
+
+All Makefile commands run inside the local `.venv` environment. To use the environment manually:
+
+```bash
+source .venv/bin/activate
+```
+
 If you see an XGBoost OpenMP error on macOS, install libomp:
 ```bash
 brew install libomp
@@ -321,7 +328,7 @@ The left heatmap shows that listing prices are geographically concentrated. High
 
 The k = 6 KMeans clusters on the right aligns closely with actual neighborhood boundaries. This shows that the geogeaphic sturcture extracted from latitude and longitude is meaningful additional location feature alongside `neighbourhood_cleaned`.
 
-![Log Price by Geographic Cluster](./plots/price_by_geographic_clustering.png)
+![Log Price by Geographic Cluster](./plots/Price_by_Geographic_Cluster.png)
 
 The boxplot shows clear price variation across the six clusters. Kenmore/Fenway has the highest median log price, followed by Chinatown/Downtown. Allston/Brighton and Roslindale have relatively lower median prices. All clusters show considerable IQR spread, which means even within the same geographic area, other listing features are still important sources of price variation.
 
@@ -385,4 +392,3 @@ We selected six models to cover a spectrum of complexity and interpretability. L
 The three linear models, Linear Regression, Lasso, and Ridge, perform very similarly, achieving nearly identical training and testing RMSE. However, they share fundamental limitation: they assume a linear relationship between features and price, which means they cannot capture interaction effects such as the combined impact of neighbourhood and property size on price. In principle, Lasso should perform automatic feature selection and Ridge should handle correlated features, which should be better, but in practice both regularizers had minimal effect, Lasso's best alpha found by cross-validation was only 0.00045, meaning the penalty was nearly zero and all three models produced near-identical results.
 
 The last three tree-based models show more variation in performance. The simplest of the three, the Decision Tree, was the worst-performing model overall. Although its training RMSE is quite close to that of the linear models, a single decision tree is prone to overfitting, which may explain its weaker performance on test data. The two ensemble tree methods, instead, performed substantially better, suggesting that nonlinear relationships and feature interactions are important in predicting Airbnb prices. XGBoost obtained the lowest CV RMSE, but looking at the test RMSE, which is the final metric we care about most, Random Forest performed slighly better and can be considered the best model, achieving a test RMSE of 0.3006.
-
