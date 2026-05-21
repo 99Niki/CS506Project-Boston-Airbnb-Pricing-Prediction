@@ -1,8 +1,4 @@
-# CS506Project-Boston-Airbnb-Pricing-Prediction
-
-## Presentation Video
-
-[Watch the presentation video](https://youtu.be/hEpn4JIAQOU)
+# Boston-Airbnb-Pricing-Prediction
 
 ## Proposal
 
